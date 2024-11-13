@@ -1,0 +1,55 @@
+.light-mode {
+  --background: #ffffff;
+  --onBackground: #000;
+  --secondary: #e6e3e3;
+  --onSecondary: #171e29;
+  --lightText: #a6a6a6;
+  --border: #f1f1f1;
+  --surface: #f1f1f1;
+  --onSurface: #171e29;
+}
+
+.dark-mode {
+  --background: #000000;
+  --onBackground: #fff;
+  --secondary: #857676;
+  --onSecondary: #fff;
+  --lightText: #a8a8a8;
+  --border: #262626;
+  --surface: #1f1f1f;
+  --onSurface: #d3d3d3;
+}
+
+$color-pr: var(--color-pr);
+
+@function getPrimary($percent) {
+  @return getColor($percent);
+}
+
+@function getColor($percent, $targetColor: $color-pr, $originColor: white) {
+  @return color-mix(in srgb, $targetColor $percent * 10%, $originColor);
+}
+
+$primary: #368c72;
+$heavyPrimary: #12682b;
+$lightPrimary: lighten($primary, 5);
+$onPrimary: #ffffff;
+$background: var(--background);
+$onBackground: var(--onBackground);
+$secondary: var(--secondary);
+$onSecondary: var(--onSecondary);
+$surface: var(--surface);
+$onSurface: var(--onSurface);
+$lightText: var(--lightText);
+$shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+$border: var(--border);
+$dialogRadius: 10px;
+$error: #ff4d4f;
+$success: #52c41aff;
+
+$cardBackground: #272d37;
+$linearGradient: linear-gradient(90deg, #1839ff 0%, #f300ff 100%);
+$greyLinear: linear-gradient(135deg,
+    rgba(200, 200, 200, 1),
+    rgba(175, 175, 175, 0),
+    rgba(151, 151, 151, 1)) 1 1;
